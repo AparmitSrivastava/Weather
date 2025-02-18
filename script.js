@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 let valuesearch = document.getElementById("valuesearch")
 let cityname = document.getElementById("city")
 let temperature = document.getElementById("temperature")
@@ -19,8 +17,8 @@ form.addEventListener("submit" , (e)=>{
 })
 
 
-const id = process.env.API_KEY;
-const url = process.env.API_URL + id
+let id = "9505fd1df737e20152fbd78cdb289b6a"
+let url = "https://api.openweathermap.org/data/2.5/weather?units=metric&appid="+ id;
 
 const searchWeather = async() => {
     let x = await fetch(url + "&q=" + valuesearch.value)
