@@ -1,0 +1,182 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+
+
+
+body{
+    background-image: url(bg.jpg);
+    background-size: cover;
+    margin: 0;
+    min-height: 100vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    position: relative;
+    
+} 
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(4, 4, 4, 0.79); /* Dark overlay with 40% opacity */
+    z-index: -1; /*Make sure the overlay is behind content*/
+    filter: blur(45px);
+} 
+    
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width:370px;
+    height: max-content;
+    background-color: #f7f7f7;
+    min-height: 300px ;
+    border-radius: 30px;
+    box-shadow: 5px 30px 50px #5553;
+    padding: 30px;
+    box-sizing: border-box;    
+    background: linear-gradient(135deg , rgb(127, 193, 28) 25%, rgb(49, 49, 207) 75%);
+}
+
+main form{
+    border: 1px solid #555;
+    display: flex;
+    justify-content: space-between; 
+    border-radius: 30px;
+}
+
+main form input,
+main form button{
+    border: none;
+    outline: none;
+    background-color: transparent;  
+    padding: 10px;
+    padding-left:20px ;
+}
+
+main form i {
+    opacity: 0.8;
+}
+
+.results {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.results .name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.results .temp img { 
+    width: 150px;
+    filter: drop-shadow(0 10px 50px black);
+
+}
+.results .temp figcaption {
+    font-size: 3em;
+    font-weight:600;
+    padding-left:7px;
+}
+
+.description{
+    padding: 10px 0 20px;
+}
+
+main ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+main ul li {
+    background-color: #f66d29;
+    color: white;
+    border-radius: 10px;
+    padding: 20px 10px;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        #0003 50%
+    );
+    font-weight: bold;
+    font-size: 14px;
+    /* width: 60px; */
+}
+
+main li i {
+    display: block!important;
+    font-size: 2em;
+    margin: 20px;
+}
+
+main li:nth-child(2){
+    background-color: #be3caff3;
+    
+}
+
+main li:nth-child(3){
+    background-color: #3f4d75;
+}
+
+main.error {
+    animation: errorEffect 0.3s linear 1;
+}
+    @keyframes errorEffect {
+        0%
+        {
+            transform: translate(10px,5px);
+        }
+        25%
+        {
+            transform: translate(-5px,0);
+        }
+        50%
+        {
+            transform: translate(20px,4px);
+        }
+        75%
+        {
+            transform: translate(-8px,4px);
+        }
+        100%
+        {
+            transform: translate(0,0);
+        }
+        /* error class will only run once then we will have to clear the class and aplly it again */
+        
+    }
+
+    input::placeholder{
+        font-weight: bold;
+        color: rgb(74, 74, 74);
+        font-size: 14px;
+        
+    }
+
+    main form button i{
+        padding-right: 10px;
+    }
+
+
+    figcaption{
+    font-family: "Gabarito";
+    font-size: 30px;
+    }
+
+    p.description{
+        font-weight: 600;
+    }
