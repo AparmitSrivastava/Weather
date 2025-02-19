@@ -41,6 +41,7 @@ const searchWeather = async() => {
             main.classList.remove('error')
         },1000)
     }
-    valuesearch.value = ''  //after the user has searched for info whether the search was success or not the iinput will clear to default
+    valuesearch.value = ''  
+    //after the user has searched for info whether the search was success or not the iinput will clear to default
 }
 
