@@ -23,7 +23,7 @@ let url = "https://api.openweathermap.org/data/2.5/weather?units=metric&appid="+
 const searchWeather = async() => {
     let x = await fetch(url + "&q=" + valuesearch.value)
     let data = await x.json();
-    console.log(data);
+    // console.log(data);
 
     if(data.cod == 200){
         cityname.querySelector("figcaption").innerHTML = data.name;
