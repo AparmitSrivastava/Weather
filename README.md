@@ -1,6 +1,17 @@
 ## 🌦 Weather
 A simple weather web application that allows users to check real-time weather conditions for any city.
 
+## My First Project: ☁️
+This was my first major project in web development. Before this, I practiced CSS, HTML, and JavaScript through various exercises.
+
+
+---
+
+### What I Learned:
+- How to fetch API data dynamically.
+- Styling a responsive UI with CSS.
+- Handling user input effectively.
+
 ---
 
 ### Features
