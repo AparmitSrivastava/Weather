@@ -10,7 +10,7 @@ let main = document.querySelector("main")
 
 
 form.addEventListener("submit" , (e)=>{
-    e.preventDefault();  //avoids refresh of the page
+    e.preventDefault();  
     if(valuesearch.value != ''){
         searchWeather();
     }           
