@@ -1,67 +1,155 @@
-<!-- flag - https://flagsapi.com/GB/shiny/32.png -->
-<!-- temperature - https://openweathermap.com/img/wn/10d@4x.png -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyDost</title>
+    <title>SkyDost - Weather Forecast</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <h1>SkyDost</h1>
+            </div>
+            <form id="app">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="valuesearch" placeholder="Search for a city...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </header>
 
-    <main>
+        <main>
+            <div class="weather-card">
+                <div class="location-info">
+                    <div class="location" id="city">
+                        <h2>Enter a city</h2>
+                        <div class="country-flag">
+                            <img src="" alt="" class="flag-icon">
+                            <span class="country-name"></span>
+                        </div>
+                    </div>
+                    <div class="date-info">
+                        <span class="current-date"></span>
+                        <span class="current-time"></span>
+                    </div>
+                </div>
 
-        <form action="" id="app">
-            <input type="text" id="valuesearch" placeholder="Enter the city">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+                <div class="weather-display">
+                    <div class="primary-info">
+                        <div class="temp-display" id="temperature">
+                            <img src="cartoon.png" alt="Weather icon" class="weather-icon">
+                            <div class="temp-wrapper">
+                                <span class="temp-value">--</span>
+                                <span class="temp-unit">°C</span>
+                            </div>
+                        </div>
+                        <div class="weather-description">
+                            <p class="description">Please enter a city to see the weather</p>
+                            <p class="feels-like">Feels like: <span id="feels-like">--°</span></p>
+                        </div>
+                    </div>
 
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-cloud"></i>
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Clouds</p>
+                                <p class="detail-value" id="cloud">--%</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Humidity</p>
+                                <p class="detail-value" id="humid">--%</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-wind"></i>
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Wind</p>
+                                <p class="detail-value" id="wind">-- km/h</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-gauge"></i>
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Pressure</p>
+                                <p class="detail-value" id="press">-- hPa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Visibility</p>
+                                <p class="detail-value" id="visibility">-- km</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fa-solid fa-temperature-high"></i>
+                            </div>
+                            <div class="detail-info">
+                                <p class="detail-label">Max Temp</p>
+                                <p class="detail-value" id="temp-max">--°</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <section class="results">
-            
-            <figure class="name" id="city">
-                <figcaption>Enter a city</figcaption>
-                <img src="" alt="">
-            </figure>
+                <div class="sun-info">
+                    <div class="sun-item">
+                        <i class="fa-solid fa-sun"></i>
+                        <div>
+                            <p>Sunrise</p>
+                            <p id="sunrise">--:--</p>
+                        </div>
+                    </div>
+                    <div class="sun-info-divider"></div>
+                    <div class="sun-item">
+                        <i class="fa-solid fa-moon"></i>
+                        <div>
+                            <p>Sunset</p>
+                            <p id="sunset">--:--</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-            <figure class="temp" id="temperature">
-                <img src="cartoon.png" alt="">
-                <figcaption>
-                    <span>--°</span>   
-                    <!-- 32&deg; -->
-                </figcaption>
-            </figure>
-
-            <p class="description">Please enter a city to see the weather.</p>
-            <ul>
-                <li>
-                    <span>Clouds</span>
-                    <i class="fa-solid fa-cloud"></i>
-                    <span id="cloud">--%</span>
-                </li>
-                <li>
-                    <span>Humidity</span> 
-                    <i class="fa-solid fa-droplet"></i>
-                    <span id="humid">--%</span>
-                </li>
-                <li>
-                    <span>Pressure</span>
-                    <i class="fa-solid fa-gauge"></i>
-                    <span id="press">--Pa</span>
-                </li>
-            </ul>
-
-
-
-
-        </section>
-
-    </main>
-  
+        <footer>
+            <p>Powered by OpenWeather API</p>
+            <div class="unit-toggle">
+                <button id="celsius-btn" class="active">°C</button>
+                <button id="fahrenheit-btn">°F</button>
+            </div>
+        </footer>
+    </div>
     
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
